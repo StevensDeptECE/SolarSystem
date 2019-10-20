@@ -1,4 +1,4 @@
-package hacktoberfest;
+package Hacktoberfest;
 
 import processing.core.*;
 
@@ -13,7 +13,7 @@ public class ProcessingEarth extends PApplet{
     @Override
     public void setup() {
         //size(800,800,P3D);
-        PImage img = loadImage("earthmap1k.jpg");
+        PImage img = loadImage("../images/1k/earth.jpg");
         noStroke();
         sphereDetail(1000);
         earth = createShape(SPHERE, 500);
