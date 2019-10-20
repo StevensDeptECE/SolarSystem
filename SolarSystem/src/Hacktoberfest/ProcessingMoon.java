@@ -12,7 +12,7 @@ public class ProcessingMoon extends PApplet{
     
     @Override
     public void setup() {
-        PImage img = loadImage("moonmap1k.jpg");
+        PImage img = loadImage("../images/1k/dione.jpg");
         noStroke();
         sphereDetail(1000);
         moon = createShape(SPHERE, 500);

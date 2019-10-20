@@ -1,7 +1,7 @@
 package Hacktoberfest;
 
 import processing.core.*;
-public class ProcessingSun extends PApplet {
+public class ProcessingJupiter extends PApplet {
     PShape sun;
     
     @Override
@@ -11,7 +11,7 @@ public class ProcessingSun extends PApplet {
     
     @Override
     public void setup() {
-        PImage img = loadImage("sunmap.jpg");
+        PImage img = loadImage("../images/1k/jupiter.jpg");
         noStroke();
         sphereDetail(1000);
         sun = createShape(SPHERE, 500);
@@ -31,6 +31,6 @@ public class ProcessingSun extends PApplet {
         a += 0.01;
     }  
     public static void main(String[] args){
-        PApplet.main("Hacktoberfest.ProcessingSun");
+        PApplet.main("Hacktoberfest.ProcessingJupiter");
     }
 }
