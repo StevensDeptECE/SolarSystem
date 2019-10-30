@@ -1,6 +1,7 @@
 package Hacktoberfest;
 
 import processing.core.*;
+
 public class ProcessingMars extends PApplet{
     PShape mars;
     
@@ -11,7 +12,7 @@ public class ProcessingMars extends PApplet{
     
     @Override
     public void setup() {
-        PImage img = loadImage("marsmap1k.jpg");
+        PImage img = loadImage("../images/1k/mars.jpg");
         noStroke();
         sphereDetail(1000);
         mars = createShape(SPHERE, 500);

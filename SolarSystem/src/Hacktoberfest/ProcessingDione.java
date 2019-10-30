@@ -1,8 +1,9 @@
 package Hacktoberfest;
 
 import processing.core.*;
-public class ProcessingSun extends PApplet {
-    PShape sun;
+
+public class ProcessingDione extends PApplet{
+    PShape dione;
     
     @Override
     public void settings() {
@@ -11,11 +12,11 @@ public class ProcessingSun extends PApplet {
     
     @Override
     public void setup() {
-        PImage img = loadImage("sunmap.jpg");
+        PImage img = loadImage("../images/1k/dione.jpg");
         noStroke();
         sphereDetail(1000);
-        sun = createShape(SPHERE, 500);
-        sun.setTexture(img);
+        dione = createShape(SPHERE, 500);
+        dione.setTexture(img);
          //frameRate(60);
     }
     float a = 0;
@@ -26,11 +27,11 @@ public class ProcessingSun extends PApplet {
         translate(width/2, height/2, -500);
         rotateZ(23.5f * DEG2RAD);
         rotateY(a);
-        // sun.rotateY(0.01);
-        shape(sun); 
+        //  dione.rotateY(0.01);
+        shape(dione); 
         a += 0.01;
     }  
     public static void main(String[] args){
-        PApplet.main("Hacktoberfest.ProcessingSun");
+        PApplet.main("Hacktoberfest.ProcessingDione");
     }
 }
