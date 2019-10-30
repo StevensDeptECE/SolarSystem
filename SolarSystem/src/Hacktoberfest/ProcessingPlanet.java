@@ -12,7 +12,7 @@ public class ProcessingPlanet extends PApplet {
     
     @Override
     public void settings() {
-        size(1800, 800, "processing.opengl.PGraphics3D");
+        size(2400, 800, "processing.opengl.PGraphics3D");
     }
     
     public void createBodies() throws IOException {
@@ -20,6 +20,8 @@ public class ProcessingPlanet extends PApplet {
         List<String> result = w.map(x -> x.toString())
                               .filter(f -> f.endsWith(".jpg"))
                               .collect(Collectors.toList());
+                            //.filter(f -> f.matches("[a-zA-Z]+[_][a-zA-Z]+[.jpg]+"))
+                            //.filter(f -> f.endsWith("[a-zA-Z]+[_][a-zA-Z]+[.jpg]+"))
         Iterator<String> it = result.iterator();
         while(it.hasNext()){
             String s = it.next();
@@ -27,10 +29,12 @@ public class ProcessingPlanet extends PApplet {
                 it.remove();
         }
         System.out.println(result.toString());
-        float size = 200;
+        float size = 100;
+        //float pos = 0;
         for (String bodyName: result) {
             try {
-                planets.add(createBody(bodyName, size));
+                planets.add(createBody(bodyName, size)); // planets.add(createBody(bodyName, pos, size));
+                //pos += 400;
             } catch(Exception e) {
                 System.out.println("Error:" + e + " body=" + bodyName);
             }
@@ -59,16 +63,16 @@ public class ProcessingPlanet extends PApplet {
     public void draw() {
         background(0);
         translate(width/2, height/2, -500);
-        float x = -800;
+        float x = -1200;
         for (PShape body : planets) {
             pushMatrix();
             translate(x,0,0);
             rotateZ(23.5f * PI/180);
             rotateY(a);
-            //translate(x,0,0);
+            //translate(0,0,x);
             shape(body);
             popMatrix();
-            x += 400;
+            x += 300;
         }       
         a += 0.01;
     }
